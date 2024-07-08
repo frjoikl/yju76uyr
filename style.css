@@ -1,0 +1,14 @@
+function generateLottoNumbers() {
+  // 랜덤한 번호를 생성하여 추첨 결과를 표시합니다
+  const numbers = [];
+  while (numbers.length < 6) {
+    const randomNumber = Math.floor(Math.random() * 45) + 1;
+    if (!numbers.includes(randomNumber)) {
+      numbers.push(randomNumber);
+    }
+  }
+
+  // 결과를 HTML에 출력합니다
+  const numbersDiv = document.getElementById('numbers');
+  numbersDiv.innerHTML = numbers.sort((a, b) => a - b).join(', ');
+}
